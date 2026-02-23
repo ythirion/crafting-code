@@ -23,4 +23,4 @@ L’objectif ? **Développer ton intelligence collective**, t’équiper des **m
 - [Day 3 - Tax Simulator](04.tax-simulator/README.md)
 
 ## Quick Craft Session
-- []
+- [Order Management](03.order-management/README.md)
