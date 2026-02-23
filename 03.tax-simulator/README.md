@@ -71,4 +71,4 @@ Voici quelques conseils pour réaliser l'ajout de cette fonctionnalité:
 - Ajouter la fonctionnalité quand votre code sera prêt à la recevoir
 
 
-Barème disponible [ici](bareme.md).
+Barème disponible [ici](BAREME.md).
