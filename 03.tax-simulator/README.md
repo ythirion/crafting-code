@@ -69,3 +69,6 @@ Voici quelques conseils pour réaliser l'ajout de cette fonctionnalité:
 	- Lire la documentation (vivante dans le cadre des tests)
 - Mettez vous en confiance pour préparer l'accueil de cette fonctionnalité
 - Ajouter la fonctionnalité quand votre code sera prêt à la recevoir
+
+
+Barème disponible [ici](bareme.md).
