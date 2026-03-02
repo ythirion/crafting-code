@@ -1,26 +1,74 @@
-# Crafting Code
-## Pitch
-> Apprendre en faisant, coder en conscience !
+# Simulateur
+## User Stories
+L'entreprise qui a développé le simulateur pour le compte de l'état a utilisé le backlog suivant pour avancer sur ce logiciel.
 
-Tu sais coder, mais **sais-tu coder du code propre** ? Concevoir avec intention, refactorer intelligemment, tester avec confiance, et surtout, **travailler efficacement en équipe** ?  
+Backlog disponible [ici](USER_STORIES.md).
 
-Ici, **on apprend en faisant** ! À travers des **katas de code**, on va expérimenter, itérer et affûter nos pratiques pour devenir de meilleurs artisans du logiciel.
+Le système est exposé à l'aide d'une `API REST`.
+![API](img/api.webp)
 
-![Crafting Code](img/crafting-code.webp)
+## Nouveau Besoin
+### **User Story: Ajouter une nouvelle tranche pour les hauts revenus**
 
-Au programme :  
-💡 **Refactoring & T.D.D** pour un code solide et évolutif  
-🎯 **Mutation Testing** pour tester… tes tests !  
-👥 **Mob Programming** pour apprendre ensemble, plus vite, plus fort  
-🌱 **Strangler Pattern** pour moderniser du code legacy sans tout casser  
-✨ **Et bien plus encore !**  
+**En tant que** gouvernement ou administrateur du système,  
+**Je veux** ajouter une nouvelle tranche d'imposition pour les revenus supérieurs à 500 000 EUR,  
+**Afin de** mieux taxer les très hauts revenus et d’assurer une meilleure équité fiscale.
 
-L’objectif ? **Développer ton intelligence collective**, t’équiper des **meilleures pratiques** et t’aider à coder avec **intention et impact**.  
+---
 
-## Sessions
-- [Day 1 - Mob Programming](01.mob-programming/README.md)
-- [Day 2 - Xtrem T.D.D](02.xtrem-t.d.d/README.md)
-- [Day 3 - Tax Simulator](04.tax-simulator/README.md)
+#### **Critères d'acceptation :**
 
-## Quick Craft Session
-- [Order Management](03.order-management/README.md)
+1. **Définition de la tranche :**
+   - Les revenus supérieurs à **500 000 EUR** doivent être taxés à un taux spécifique (**par exemple 48%**).
+   - Les revenus inférieurs à 500 000 EUR ne doivent pas être affectés par ce changement.
+
+2. **Impact minimal :**
+   - La modification doit être rétrocompatible et ne pas affecter les calculs existants pour les autres tranches.
+
+3. **Exactitude des calculs :**
+   - Le système doit correctement appliquer cette nouvelle tranche sans affecter les tranches inférieures.
+
+4. **Facilité de mise à jour :**
+   - L'ajout ou la modification des tranches doit être simple et s'appuyer sur des données centralisées.
+
+---
+
+#### **Cas de tests :**
+
+1. **Revenus inférieurs au seuil :**
+   - Situation familiale : "Célibataire"  
+   - Salaire mensuel : 20 000 EUR (revenu annuel 240 000 EUR)  
+   - Résultat attendu : Aucun changement par rapport au calcul précédent (pas de taxe appliquée à 48%).
+
+2. **Revenus supérieurs au seuil :**
+   - Situation familiale : "Célibataire"  
+   - Salaire mensuel : 45 000 EUR (revenu annuel 540 000 EUR)  
+   - Résultat attendu :  
+     - Taxe pour les 500 000 premiers EUR basée sur les anciennes tranches.  
+     - Taxe pour les 40 000 EUR restants à 48%.
+
+> 223 508.56 EUR
+
+3. **Revenus avec enfants (affectés par le quotient familial) :**
+   - Situation familiale : "Marié/Pacsé"  
+   - Salaire mensuel conjoint : 25 000 EUR  
+   - Salaire mensuel principal : 30 000 EUR  
+   - Nombre d'enfants : 2  
+   - Résultat attendu :  
+     - Application correcte de la nouvelle tranche après division par les parts fiscales.
+
+> 234 925.68 EUR
+   
+## Conseils
+> First make the change easy, then make the easy change
+
+Voici quelques conseils pour réaliser l'ajout de cette fonctionnalité:
+
+- Prenez le temps de découvrir le code
+	- Identifier les code smells
+	- Lire la documentation (vivante dans le cadre des tests)
+- Mettez vous en confiance pour préparer l'accueil de cette fonctionnalité
+- Ajouter la fonctionnalité quand votre code sera prêt à la recevoir
+
+
+Barème disponible [ici](BAREME.md).
