@@ -67,20 +67,22 @@ Toute erreur de calcul entraîne une perte proportionnelle des points.
 | Explication des choix techniques | 3 pts  |
 | Code proprement formaté          | 2 pts  |
 
-### Exemples de bonus (jusqu’à +5 pts)
+### Exemples de bonus (jusqu’à +10 pts)
 
 * Mise en place d’un Design Pattern utile (Strategy, Factory, etc.)
 * Documentation technique claire
+* Mise en place d’un `pipeline d’intégration continue` (CI) fournissant un feedback automatique et continu (tests, qualité, build, etc.) : **+5 pts**
+
 
 ### Barème synthétique
 
-| Domaine                    | Points                 |
-| -------------------------- | ---------------------- |
-| Compréhension & respect US | 15                     |
-| Exactitude des calculs     | 20                     |
-| Tests                      | 20                     |
-| Architecture & qualité     | 20                     |
-| Maintenabilité             | 10                     |
-| API REST                   | 5                      |
-| Démarche pro               | 10                     |
-| **Total**                  | **100 pts (+5 bonus)** |
+| Domaine                    | Points                  |
+|----------------------------|-------------------------|
+| Compréhension & respect US | 15                      |
+| Exactitude des calculs     | 20                      |
+| Tests                      | 20                      |
+| Architecture & qualité     | 20                      |
+| Maintenabilité             | 10                      |
+| API REST                   | 5                       |
+| Démarche pro               | 10                      |
+| **Total**                  | **100 pts (+10 bonus)** |
