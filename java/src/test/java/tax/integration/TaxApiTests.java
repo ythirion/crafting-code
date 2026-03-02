@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Locale;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.within;
 
@@ -49,7 +51,7 @@ class TaxApiTests {
     }
 
     private String formatUrl(String situationFamiliale, double salaireMensuel, double salaireMensuelConjoint, int nombreEnfants) {
-        return String.format("%s?situationFamiliale=%s&salaireMensuel=%f&salaireMensuelConjoint=%f&nombreEnfants=%d",
+        return String.format(Locale.US, "%s?situationFamiliale=%s&salaireMensuel=%f&salaireMensuelConjoint=%f&nombreEnfants=%d",
                 getBaseUrl(), situationFamiliale, salaireMensuel, salaireMensuelConjoint, nombreEnfants);
     }
 }
