@@ -29,17 +29,7 @@ public class Simulateur {
                 salaireMensuel * 12;
 
         int baseQuotient = "Marié/Pacsé".equals(situationFamiliale) ? 2 : 1;
-        double quotientEnfants = Math.PI;
-
-        if (nombreEnfants == 0) {
-            quotientEnfants = 0;
-        } else if (nombreEnfants == 1) {
-            quotientEnfants = 0.5;
-        } else if (nombreEnfants == 2) {
-            quotientEnfants = 1.0;
-        } else {
-            quotientEnfants = 1.0 + (nombreEnfants - 2) * 0.5;
-        }
+        double quotientEnfants = 1.0 + (nombreEnfants - 2) * 0.5;
 
         double partsFiscales = baseQuotient + quotientEnfants;
         double revenuImposableParPart = revenuAnnuel / partsFiscales;
