@@ -5,23 +5,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import tax.simulator.Simulateur;
+import tax.simulator.service.CalculImpotService;
 
 /**
- * Contrôleur pour le calcul des impôts
+ * Contrôleur REST pour le calcul des impôts.
+ * Dépend de l'interface {@link CalculImpotService} et non d'une implémentation concrète (DIP).
  */
 @RestController
 @RequestMapping("/api/tax")
 public class TaxController {
-    private final Simulateur simulateur;
+    private final CalculImpotService calculImpotService;
 
     /**
-     * Constructeur du contrôleur
+     * Constructeur du contrôleur.
      *
-     * @param simulateur simulateur à utiliser
+     * @param calculImpotService service de calcul des impôts
      */
-    public TaxController(Simulateur simulateur) {
-        this.simulateur = simulateur;
+    public TaxController(CalculImpotService calculImpotService) {
+        this.calculImpotService = calculImpotService;
     }
 
     /**
@@ -39,17 +40,13 @@ public class TaxController {
             @RequestParam double salaireMensuel,
             @RequestParam double salaireMensuelConjoint,
             @RequestParam int nombreEnfants) {
-        try {
-            return ResponseEntity.ok(
-                    simulateur.calculerImpotsAnnuel(
-                            situationFamiliale,
-                            salaireMensuel,
-                            salaireMensuelConjoint,
-                            nombreEnfants
-                    )
-            );
-        } catch (IllegalArgumentException ex) {
-            return ResponseEntity.badRequest().body(ex.getMessage());
-        }
+        return ResponseEntity.ok(
+                calculImpotService.calculerImpotsAnnuel(
+                        situationFamiliale,
+                        salaireMensuel,
+                        salaireMensuelConjoint,
+                        nombreEnfants
+                )
+        );
     }
 }

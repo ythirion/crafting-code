@@ -1,4 +1,4 @@
-package tax.simulator;
+package tax.simulator.model;
 
 /**
  * Énumération représentant la situation familiale d'une personne
