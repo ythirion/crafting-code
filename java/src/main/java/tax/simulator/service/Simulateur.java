@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import tax.simulator.model.BaremeFiscal;
 import tax.simulator.service.strategy.ICalculFamilialStrategy;
-import tax.simulator.service.strategy.CelibataireStrategyI;
-import tax.simulator.service.strategy.MariePacseStrategyI;
+import tax.simulator.service.strategy.CelibataireStrategy;
+import tax.simulator.service.strategy.MariePacseStrategy;
 
 /**
  * Implémentation du service de calcul des impôts annuels.
@@ -13,7 +13,7 @@ import tax.simulator.service.strategy.MariePacseStrategyI;
  * <p>
  * Utilise le pattern Strategy pour déléguer les règles variant selon la
  * situation familiale (revenu, quotient, validation) à des stratégies
- * spécialisées ({@link CelibataireStrategyI}, {@link MariePacseStrategyI}).
+ * spécialisées ({@link CelibataireStrategy}, {@link MariePacseStrategy}).
  * <p>
  * La couche métier ne connaît pas la source des données fiscales : elle délègue
  * leur récupération au {@link IBaremeRepository} (principe DIP).
@@ -56,8 +56,8 @@ public class Simulateur implements ICalculImpotService {
      */
     private ICalculFamilialStrategy getStrategy(String situationFamiliale) {
         return switch (situationFamiliale) {
-            case "Célibataire" -> new CelibataireStrategyI();
-            case "Marié/Pacsé" -> new MariePacseStrategyI();
+            case "Célibataire" -> new CelibataireStrategy();
+            case "Marié/Pacsé" -> new MariePacseStrategy();
             default -> throw new IllegalArgumentException("Situation familiale invalide.");
         };
     }

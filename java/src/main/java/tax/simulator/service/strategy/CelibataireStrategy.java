@@ -8,7 +8,7 @@ package tax.simulator.service.strategy;
  *     <li>Le salaire du conjoint est ignoré</li>
  * </ul>
  */
-public class CelibataireStrategy implements CalculFamilialStrategy {
+public class CelibataireStrategy implements ICalculFamilialStrategy {
 
     private static final int NOMBRE_MOIS = 12;
 
