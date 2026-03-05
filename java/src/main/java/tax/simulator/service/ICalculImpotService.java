@@ -5,7 +5,7 @@ package tax.simulator.service;
  * Respecte le principe DIP : le contrôleur dépend de cette interface,
  * pas de l'implémentation concrète {@link Simulateur}.
  */
-public interface CalculImpotService {
+public interface ICalculImpotService {
 
     /**
      * Calcule les impôts annuels d'une personne.

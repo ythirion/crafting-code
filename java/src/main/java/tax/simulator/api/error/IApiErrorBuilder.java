@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
  * Interface du monteur (Builder) pour construire un {@link ApiError}.
  * Définit toutes les étapes possibles de la construction.
  */
-public interface ApiErrorBuilder {
+public interface IApiErrorBuilder {
 
     /**
      * Remet à zéro le monteur pour construire un nouveau produit.

@@ -4,15 +4,18 @@ import java.time.LocalDateTime;
 
 /**
  * Monteur concret pour construire un {@link ApiError} étape par étape.
- * Implémente l'interface {@link ApiErrorBuilder}.
+ * Implémente l'interface {@link IApiErrorBuilder}.
  * <p>
  * Après chaque appel à {@link #build()}, le monteur est remis à zéro
  * et prêt à construire un nouvel objet.
  */
-public class ApiErrorBuilderImpl implements ApiErrorBuilder {
+public class ApiErrorBuilderImpl implements IApiErrorBuilder {
 
     private ApiError apiError;
 
+    /**
+     * Constructeur du monteur.
+     */
     public ApiErrorBuilderImpl() {
         this.reset();
     }

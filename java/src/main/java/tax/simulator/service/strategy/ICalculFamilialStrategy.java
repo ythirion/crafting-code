@@ -5,7 +5,7 @@ package tax.simulator.service.strategy;
  * Encapsule les règles qui varient selon la situation familiale :
  * revenu annuel, quotient de base, et validation des salaires.
  */
-public interface CalculFamilialStrategy {
+public interface ICalculFamilialStrategy {
 
     /**
      * Valide les salaires selon la situation familiale.

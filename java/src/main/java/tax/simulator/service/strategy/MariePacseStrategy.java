@@ -8,7 +8,7 @@ package tax.simulator.service.strategy;
  *     <li>Le salaire du conjoint doit être positif ou nul</li>
  * </ul>
  */
-public class MariePacseStrategy implements CalculFamilialStrategy {
+public class MariePacseStrategy implements ICalculFamilialStrategy {
 
     private static final int NOMBRE_MOIS = 12;
 

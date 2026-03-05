@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 /**
  * Produit : réponse d'erreur normalisée renvoyée par l'API.
- * Cet objet est construit via un {@link ApiErrorBuilder}.
+ * Cet objet est construit via un {@link IApiErrorBuilder}.
  */
 public class ApiError {
 

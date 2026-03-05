@@ -7,7 +7,7 @@ import tax.simulator.model.BaremeFiscal;
  * Respecte le principe DIP : les couches métier dépendent de cette abstraction,
  * pas d'une implémentation concrète.
  */
-public interface BaremeRepository {
+public interface IBaremeRepository {
 
     /**
      * Retourne le barème fiscal en vigueur.
